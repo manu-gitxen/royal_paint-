@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Royal Auto Paints - Custom Luxury Styling Overrides
+   Designed for High Legibility & Premium Automotive Refinish Presentation
+   ========================================================================== */
+
+:root {
+    --royal-navy: #0B1E28;
+    --royal-slate: #1E293B;
+    --royal-body: #2B3940;
+    --royal-red: #F94735;
+    --royal-gold: #FAC12E;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section Layout, 100vh & Background
+   -------------------------------------------------------------------------- */
+.lg-hero-sec {
+    background-color: #E7E7E9;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+.lg-hero-sec .lg-hero-bg,
+.lg-hero-sec .lg-hero-img2 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    z-index: 1;
+}
+
+.lg-hero-sec .lg-hero-bg img,
+.lg-hero-sec .lg-hero-img2 img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center right !important;
+}
+
+.lg-hero-sec .container {
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+}
+
+.lg-hero-sec .lg-hero-content {
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
+}
+
+.lg-hero-sec .lg-hero-text {
+    padding-top: 0 !important;
+}
+
+/* Base Desktop Typography */
+.lg-hero-sec .lg-hero-text .hero_title,
+.lg-hero-sec .lg-hero-text .hero_title * {
+    color: var(--royal-navy) !important;
+    font-size: 58px;
+    line-height: 1.15;
+    max-width: 720px;
+    font-weight: 800;
+    padding-bottom: 0px;
+    letter-spacing: -0.5px;
+}
+
+.lg-hero-sec .lg-hero-text .hero_title {
+    padding-bottom: 22px !important; /* Eliminates the template 445px bottom gap */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.lg-hero-sec .lg-hero-text .hero_title .highlight-red,
+.lg-hero-sec .lg-hero-text .hero_title .highlight-red * {
+    color: var(--royal-red) !important;
+}
+
+.lg-hero-sec .lg-hero-content .desc-text {
+    max-width: 560px !important;
+    margin-top: 0 !important;
+}
+
+.lg-hero-sec .lg-hero-content .desc-text p {
+    color: var(--royal-body) !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    padding-bottom: 28px !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Watermark background text contrast */
+.lg-hero-sec .lg-bg-text h2 {
+    color: rgba(11, 30, 40, 0.04) !important;
+    -webkit-text-stroke: 1px rgba(11, 30, 40, 0.09) !important;
+}
+
+/* Button styling refinement */
+.lg-hero-sec .lg-btn a {
+    box-shadow: 0 10px 25px rgba(249, 71, 53, 0.3);
+    transition: all 0.3s ease;
+}
+
+.lg-hero-sec .lg-btn a:hover {
+    box-shadow: 0 15px 30px rgba(249, 71, 53, 0.45);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints Engine (Overrides template bugs in style.css)
+   -------------------------------------------------------------------------- */
+
+/* Tablets (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .lg-hero-sec .lg-hero-content {
+        padding-top: 110px !important;
+        padding-bottom: 40px !important;
+    }
+    .lg-hero-sec .lg-hero-text .hero_title,
+    .lg-hero-sec .lg-hero-text .hero_title * {
+        font-size: 44px !important;
+        line-height: 1.18 !important;
+    }
+    .lg-hero-sec .lg-hero-text .hero_title {
+        padding-bottom: 16px !important;
+    }
+    .lg-hero-sec .lg-hero-content .desc-text p {
+        font-size: 16px !important;
+        padding-bottom: 22px !important;
+    }
+}
+
+/* Mobile Phones (481px - 767px) - Overrides template 80px gap & 150px top padding */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .lg-hero-sec .lg-hero-text {
+        padding-top: 0 !important;
+    }
+    .lg-hero-sec .lg-hero-content {
+        padding-top: 90px !important;
+        padding-bottom: 30px !important;
+    }
+    .lg-hero-sec .lg-hero-text .hero_title,
+    .lg-hero-sec .lg-hero-text .hero_title * {
+        font-size: 34px !important;
+        line-height: 1.22 !important;
+    }
+    .lg-hero-sec .lg-hero-text .hero_title {
+        padding-bottom: 14px !important; /* Overrides template 80px gap */
+    }
+    .lg-hero-sec .lg-hero-content .desc-text p {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+        padding-bottom: 20px !important;
+    }
+    .lg-hero-sec .lg-bg-text h2 {
+        font-size: 120px !important; /* Prevents 300px horizontal scroll bug */
+    }
+}
+
+/* Small Mobile Screens (<= 480px, e.g. iPhone SE & Android) */
+@media only screen and (max-width: 480px) {
+    .lg-hero-sec .lg-hero-text {
+        padding-top: 0 !important;
+    }
+    .lg-hero-sec .lg-hero-content {
+        padding-top: 80px !important;
+        padding-bottom: 30px !important;
+    }
+    .lg-hero-sec .lg-hero-text .hero_title,
+    .lg-hero-sec .lg-hero-text .hero_title * {
+        font-size: 28px !important;
+        line-height: 1.25 !important;
+    }
+    .lg-hero-sec .lg-hero-text .hero_title {
+        padding-bottom: 12px !important; /* Overrides template 80px gap */
+    }
+    .lg-hero-sec .lg-hero-content .desc-text p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        padding-bottom: 18px !important;
+    }
+    .lg-hero-sec .lg-bg-text h2 {
+        font-size: 80px !important; /* Prevents horizontal scroll */
+    }
+}
