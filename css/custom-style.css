@@ -5,6 +5,7 @@
 
 :root {
     --royal-navy: #0B1E28;
+    --royal-logo-blue: #09465F;
     --royal-slate: #1E293B;
     --royal-body: #2B3940;
     --royal-red: #F94735;
@@ -88,7 +89,7 @@
 }
 
 .lg-hero-sec .lg-hero-content .desc-text {
-    max-width: 560px !important;
+    max-width: 620px !important;
     margin-top: 0 !important;
 }
 
@@ -107,15 +108,26 @@
     -webkit-text-stroke: 1px rgba(11, 30, 40, 0.09) !important;
 }
 
-/* Button styling refinement */
+/* Button styling refinement - Seamless Pill & Circle Glow */
 .lg-hero-sec .lg-btn a {
-    box-shadow: 0 10px 25px rgba(249, 71, 53, 0.3);
+    box-shadow: none !important;
+    transition: transform 0.3s ease;
+}
+
+.lg-hero-sec .lg-btn a span,
+.lg-hero-sec .lg-btn a i {
+    box-shadow: 0 8px 20px rgba(249, 71, 53, 0.28);
     transition: all 0.3s ease;
 }
 
 .lg-hero-sec .lg-btn a:hover {
-    box-shadow: 0 15px 30px rgba(249, 71, 53, 0.45);
     transform: translateY(-2px);
+    box-shadow: none !important;
+}
+
+.lg-hero-sec .lg-btn a:hover span,
+.lg-hero-sec .lg-btn a:hover i {
+    box-shadow: 0 12px 28px rgba(249, 71, 53, 0.45);
 }
 
 /* --------------------------------------------------------------------------
@@ -213,4 +225,250 @@
 .sidebar-info-contents .logo img {
     max-height: 42px !important;
 }
+
+/* --------------------------------------------------------------------------
+   Desktop Header Navigation - Logo Blue Palette (#09465F) & Single-Line Flow
+   -------------------------------------------------------------------------- */
+.lg-header-section .lg-header-navigation .logo-nav {
+    max-width: none !important;
+    flex: 1 1 auto !important;
+}
+
+.lg-header-section .lg-header-navigation .main-navigation {
+    max-width: none !important;
+    padding-left: 20px !important;
+    width: auto !important;
+}
+
+.lg-header-section .lg-header-navigation .main-navigation ul {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+}
+
+.lg-header-section .lg-header-navigation .main-navigation li {
+    margin: 0 12px !important;
+    white-space: nowrap !important;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .lg-header-section .lg-header-navigation .main-navigation li {
+        margin: 0 8px !important;
+    }
+    .lg-header-section .lg-header-navigation .main-navigation li a {
+        font-size: 14px !important;
+    }
+}
+
+.lg-header-section .lg-header-navigation .main-navigation li a {
+    color: var(--royal-logo-blue) !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    white-space: nowrap !important;
+    transition: color 0.3s ease;
+}
+
+.lg-header-section .lg-header-navigation .main-navigation li:hover > a,
+.lg-header-section .lg-header-navigation .main-navigation li.current-menu-item > a,
+.lg-header-section .lg-header-navigation .main-navigation li.current_page_item > a {
+    color: var(--royal-red) !important;
+}
+
+/* Dropdown '+' symbol */
+.lg-header-section .dropdown:after {
+    color: var(--royal-logo-blue) !important;
+}
+
+.lg-header-section .dropdown:hover:after {
+    color: var(--royal-red) !important;
+}
+
+/* Call Us CTA text in nav header */
+.lg-header-section .lg-header-navigation .cta-action .cta-info .item-text span {
+    color: var(--royal-logo-blue) !important;
+    opacity: 0.8 !important;
+}
+
+.lg-header-section .lg-header-navigation .cta-action .cta-info .item-text a {
+    color: var(--royal-logo-blue) !important;
+    font-weight: 700 !important;
+}
+
+.lg-header-section .lg-header-navigation .cta-action .cta-info .item-icon {
+    background-color: var(--royal-logo-blue) !important;
+}
+
+.lg-header-section .lg-header-navigation .cta-action .cta_btn {
+    color: var(--royal-logo-blue) !important;
+    font-weight: 600 !important;
+    border-left: 1px solid rgba(9, 70, 95, 0.18) !important;
+    transition: all 0.3s ease;
+}
+
+.lg-header-section .lg-header-navigation .cta-action .cta_btn:hover {
+    color: #fff !important;
+    background-color: var(--royal-red) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   Hero Swiper Division Slider & Segmented Navigation (Reference 1)
+   -------------------------------------------------------------------------- */
+.hero-swiper-slider {
+    padding: 0 !important;
+}
+
+.hero-swiper-slider .royal-hero-swiper {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slide {
+    width: 100%;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slide .slide-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--royal-red);
+    background: rgba(249, 71, 53, 0.08);
+    border: 1px solid rgba(249, 71, 53, 0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+/* Segmented Progress Lines Pagination (Reference 1) */
+.royal-slider-nav-wrap {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.royal-slider-nav-wrap .container {
+    pointer-events: auto;
+}
+
+.royal-slider-pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: auto !important;
+    position: static !important;
+}
+
+.royal-slider-pagination .swiper-pagination-bullet {
+    width: 65px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(11, 30, 40, 0.25);
+    opacity: 1;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.royal-slider-pagination .swiper-pagination-bullet-active {
+    width: 95px;
+    background: var(--royal-red) !important;
+}
+
+.royal-slider-arrows {
+    gap: 10px;
+}
+
+.royal-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(11, 30, 40, 0.15);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--royal-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.royal-nav-btn:hover {
+    background: var(--royal-navy);
+    color: #fff;
+    border-color: var(--royal-navy);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for slider navigation */
+@media only screen and (max-width: 991px) {
+    .royal-slider-nav-wrap {
+        bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hero-slide .slide-badge {
+        font-size: 11px;
+        padding: 3px 10px;
+        margin-bottom: 8px;
+    }
+    .royal-slider-nav-wrap {
+        bottom: 18px;
+    }
+    .royal-slider-pagination .swiper-pagination-bullet {
+        width: 32px;
+        height: 3px;
+    }
+    .royal-slider-pagination .swiper-pagination-bullet-active {
+        width: 50px;
+    }
+    .royal-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+    }
+    .lg-hero-sec .lg-hero-content {
+        padding-bottom: 75px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .royal-slider-pagination {
+        gap: 6px;
+    }
+    .royal-slider-pagination .swiper-pagination-bullet {
+        width: 22px;
+    }
+    .royal-slider-pagination .swiper-pagination-bullet-active {
+        width: 36px;
+    }
+    .royal-nav-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+}
+
 

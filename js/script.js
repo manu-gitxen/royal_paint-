@@ -408,6 +408,31 @@ Last change:    00/00/00
 		});
 	};
 
+	if ($('.royal-hero-swiper').length > 0) {
+		var heroSwiper = new Swiper('.royal-hero-swiper', {
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
+			speed: 1000,
+			autoplay: {
+				delay: 5500,
+				disableOnInteraction: false
+			},
+			loop: true,
+			pagination: {
+				el: '.royal-slider-pagination',
+				clickable: true,
+				renderBullet: function (index, className) {
+					return '<span class="' + className + '" role="button" aria-label="Go to slide ' + (index + 1) + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: '.royal-next-btn',
+				prevEl: '.royal-prev-btn'
+			}
+		});
+	};
 
 	if ($("#slider-range").length) {
 		$( "#slider-range" ).slider({

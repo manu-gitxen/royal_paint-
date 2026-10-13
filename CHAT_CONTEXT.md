@@ -85,36 +85,43 @@
 
 ---
 
-## 3. Active Issue & Solution Verified
+### F. 4-Division Hero Slider & Reference 1 Segmented Navigation
+* Transformed static single-hero section into a 4-division Swiper slider (`index.html:837–975`):
+  1. **Automotive Refinish Division:** `royalpaint_hero_3.jpg` (Qatar's Premier Automotive Refinish & Paint Solutions)
+  2. **Commercial Paint Booth Division:** `royalpaint_hero_booth.jpg` (High-Performance Paint Booth Coatings & Cabin Protection)
+  3. **Marine & Yacht Division:** `royalpaint_hero_marine.jpg` (Advanced Marine & Yacht Coatings & Antifouling Systems)
+  4. **Wood & Architectural Division:** `royalpaint_hero_wood.jpg` (Premium Wood Finishes, Polyurethane Stains & Clear Lacquers)
+* Reference 1 Segmented Progress Navigation (`—— —— —— ——`):
+  * 65px horizontal indicator bars (active expands to 95px in `--royal-red` `#F94735`).
+  * Circular frosted-glass arrows with backdrop blur.
+  * Autoplay 5.5s with 1s smooth cross-fade (`fadeEffect: { crossFade: true }`).
+* White background spread overlay completely removed to preserve natural crispness and cabin contrast.
 
-### Hero Button Hover Artifact (Screenshot `media_1791806776615_5f60a910.png`)
-* **Problem:** Hovering over *"Explore 80+ Products ➔"* revealed an awkward light-grey rectangular box behind the button.
-* **Root Cause Discovered:**
-  1. The HTML structure is `<a href="#lg-products"><span>...</span><i>...</i></a>`.
-  2. `<a>` is an unrounded flex container (276px × 52px) with `border-radius: 0px`.
-  3. `<span>` morphs on hover into a pill (`border-radius: 40px`), and `<i>` morphs into a circle (`border-radius: 100%`) shifting 5px to the right.
-  4. In `custom-style.css`, `box-shadow` was placed on `<a>`. CSS clips `box-shadow` strictly to the element's border box, so the red glow was rendered *outside* the rectangle, leaving the corners and the gap unshaded.
-  5. The contrast between the outside red glow and the untouched studio grey floor background inside the sharp 90° corners formed the rectangular box artifact.
-* **Verified Fix:**
-  Move `box-shadow` from `<a>` to `span` and `i`, so the glow follows the rounded curves of the pill and circle. Verified in Edge headless CDP: the rectangular box completely vanished.
-* **Status:** Proposed to user; awaiting approval to apply to `css/custom-style.css`.
+### G. Desktop Header Navigation Styling & Single-Row Fix
+* Nav menu text colors updated to Royal Logo Blue (`#09465F`):
+  * Links: `#09465F` with `font-weight: 600`, `font-size: 15px`.
+  * Dropdown `+` icon: `#09465F`.
+  * Phone CTA text & icon circle badge: `#09465F`.
+  * Request a Quote CTA button: `#09465F` with `font-weight: 600`, subtle divider border, and hover red accent (`#F94735`).
+  * Active/Hover state: Royal Red (`#F94735`).
+* **Fixed Nav Wrapping Issue:**
+  * Root cause: Template had restrictive `max-width: 650px` on `.main-navigation` and `750px` on `.logo-nav`, which forced the 7th item (`Contact`) onto a second row under `Home` on laptop screens.
+  * Fix applied in `css/custom-style.css`: Unset max-widths, added `flex-wrap: nowrap !important; white-space: nowrap !important;`, balanced li margin (`0 12px` on desktop, `0 8px` on 992-1200px screens). Verified 100% inline on 1280px viewport.
 
 ---
 
-## 4. Pending Roadmap (Post-Hero Approval)
+## 3. Pending Roadmap
 
-1. **Apply Hero Button Hover Fix** in `css/custom-style.css`.
-2. **Replace Pricing & Plane Sections (`index.html` lines 1237–1775)**:
+1. **Replace Pricing & Plane Sections (`index.html` lines 1237–1775)**:
    * Replace monthly pricing table (`#lg-price`) and plane animation (`#lg-plane`) with the **Interactive 83+ Product Catalog**:
      * Category tab filters (Paints, Clears, Primers, Tools, etc.)
      * Real-time live search bar
      * Product cards with image, specifications, and "Inquire on WhatsApp" pre-filled buttons
-3. **Brand Partner Marquee:**
+2. **Brand Partner Marquee:**
    * HB Body, Challenger, Axalta, Rupes, Vilote, DCRYSTA.
-4. **Contact & Branch Information:**
+3. **Contact & Branch Information:**
    * Street 23, Wakalat St, Industrial Area, Doha, Qatar.
    * Google Maps embed, phone numbers, email, working hours.
-5. **Top Header Bar:**
-   * Real Doha telephone numbers, email, and location.
-6. **Main Navigation Menu:**
-   * Update menu links only when explicitly instructed by the user.
+4. **Top Header Bar & Navigation Links:**
+   * Update menu anchors and contact details when instructed.
+
