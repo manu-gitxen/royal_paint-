@@ -26,7 +26,8 @@
 
 ### A. Brand Assets & Product Catalog Extraction
 * **Brand Assets:**
-  * Official Logo: `images/royal_logo.png`
+  * Official Logo: `images/royal_logo.png` (integrated into Desktop Header and Footer)
+  * White Brand Logo: `images/royal_logo_white.png` (integrated into Mobile Navigation Drawer & Offcanvas Sidebar)
   * Favicon: `images/royal_favicon.png`
 * **Product Catalog:**
   * Scraped, categorized, and structured all **83 catalog products** into `js/products-data.js` across 8 categories:
